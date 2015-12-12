@@ -1,0 +1,440 @@
+========================================================
+train iae500-128
+the program is on gpu
+=======================================================
+debug=False
+batchsize=100
+hidden_dimension=128
+visible_dimension=500
+base_learning_rate=0.005
+learning_rate_decay_half_epochs=10
+start_momentum=0.5
+end_momentum=0.9
+momentum_decay_epochs=5
+weight_cost=0.0001
+corruption_level=0
+output_directory=../data/nuswide/output/output2
+show_freq=0
+normalize=False
+train_size=60000
+train_data=../data/nuswide/input/trainImg.npy
+extract_reps=True
+train_reps=../data/nuswide/output/output2/trainImg-x
+eval_freq=1
+query_size=100
+validation_data=../data/nuswide/input/validationImg.npy
+label=../data/nuswide/input/validationGnd.npy
+query=../data/nuswide/input/query100.npy
+max_epoch=30
+neigbor dist,epoch:rec err, L2  , weight(w), +w ratio, sparsity
+0.0242, epoch  0: 554.4440, 0.3089, 55.7534, 0.0004, 0.0036, --()--()
+0.1000, epoch  1: 501.2249, 0.3255, 55.7969, 0.0013, 0.0080, --()--()
+0.1244, epoch  2: 477.5819, 0.3401, 55.8581, 0.0016, 0.0110, --()--()
+0.1882, epoch  3: 465.0320, 0.3549, 55.9736, 0.0023, 0.0138, --()--()
+0.3056, epoch  4: 453.9096, 0.3837, 58.2253, 0.0034, 0.0184, --()--()
+0.5294, epoch  5: 439.7523, 0.4333, 63.3183, 0.0035, 0.0255, --()--()
+0.6730, epoch  6: 425.0635, 0.4795, 66.9551, 0.0028, 0.0286, --()--()
+0.9701, epoch  7: 417.4360, 0.5289, 70.6198, 0.0021, 0.0344, --()--()
+1.1899, epoch  8: 408.8761, 0.5988, 77.4488, 0.0028, 0.0402, --()--()
+1.2284, epoch  9: 396.6150, 0.6386, 80.7588, 0.0022, 0.0444, --()--()
+1.2626, epoch 10: 388.5203, 0.6638, 81.6593, 0.0021, 0.0474, --()--()
+1.3733, epoch 11: 384.7986, 0.6940, 82.9074, 0.0024, 0.0533, --()--()
+1.4158, epoch 12: 379.8094, 0.7282, 85.2357, 0.0023, 0.0567, --()--()
+1.4816, epoch 13: 386.6991, 0.7719, 87.9954, 0.0030, 0.0586, --()--()
+1.5060, epoch 14: 373.1204, 0.7898, 88.9318, 0.0028, 0.0615, --()--()
+1.5984, epoch 15: 372.7428, 0.9400, 103.1645, 0.0016, 0.0643, --()--()
+1.6207, epoch 16: 378.6767, 0.9928, 106.8511, 0.0028, 0.0655, --()--()
+1.5790, epoch 17: 363.4383, 1.0129, 107.4072, 0.0014, 0.0665, --()--()
+1.6052, epoch 18: 368.5975, 1.0346, 107.7926, 0.0014, 0.0678, --()--()
+1.5777, epoch 19: 366.7238, 1.0732, 109.8057, 0.0070, 0.0681, --()--()
+1.6171, epoch 20: 364.6075, 1.1082, 111.8555, 0.0013, 0.0697, --()--()
+1.6098, epoch 21: 362.8059, 1.1224, 112.3098, 0.0011, 0.0685, --()--()
+1.5929, epoch 22: 358.0285, 1.1398, 112.4760, 0.0012, 0.0695, --()--()
+1.6031, epoch 23: 360.8006, 1.1565, 112.5026, 0.0011, 0.0699, --()--()
+1.5772, epoch 24: 358.9387, 1.1863, 113.6641, 0.0082, 0.0704, --()--()
+1.5298, epoch 25: 358.2301, 1.2229, 115.8492, 0.0011, 0.0683, --()--()
+1.5666, epoch 26: 354.0635, 1.2379, 116.0494, 0.0010, 0.0698, --()--()
+1.5762, epoch 27: 355.2702, 1.2524, 116.2486, 0.0010, 0.0705, --()--()
+1.5557, epoch 28: 354.3843, 1.2793, 117.7596, 0.0011, 0.0702, --()--()
+1.6138, epoch 29: 355.0063, 1.2871, 117.8240, 0.0011, 0.0727, --()--()
+checkpoint=True
+extract_reps=True
+validation_reps=../data/nuswide/output/output2/validationImg-x
+========================================================
+train iae128-16
+the program is on gpu
+=======================================================
+debug=False
+batchsize=100
+hidden_dimension=16
+visible_dimension=128
+base_learning_rate=0.005
+learning_rate_decay_half_epochs=10
+start_momentum=0.5
+end_momentum=0.9
+momentum_decay_epochs=5
+weight_cost=0.0001
+corruption_level=0
+output_directory=../data/nuswide/output/output2
+show_freq=0
+normalize=False
+train_size=60000
+train_data=../data/nuswide/output/output2/trainImg-x
+extract_reps=True
+train_reps=../data/nuswide/output/output2/trainImg-xx
+eval_freq=1
+query_size=100
+validation_data=../data/nuswide/output/output2/validationImg-x.npy
+label=../data/nuswide/input/validationGnd.npy
+query=../data/nuswide/input/query100.npy
+max_epoch=30
+neigbor dist,epoch:rec err, L2  , weight(w), +w ratio, sparsity
+0.4229, epoch  0: 3.5093, 0.0425, 20.3444, 0.0001, 0.4558, --()--()
+0.3902, epoch  1: 2.2925, 0.0430, 20.2887, 0.0001, 0.5703, --()--()
+0.3683, epoch  2: 2.0583, 0.0433, 20.2687, 0.0000, 0.6173, --()--()
+0.3611, epoch  3: 1.9760, 0.0436, 20.2572, 0.0000, 0.6451, --()--()
+0.3674, epoch  4: 1.9022, 0.0440, 20.2586, 0.0001, 0.6617, --()--()
+0.3938, epoch  5: 1.7867, 0.0447, 20.3012, 0.0001, 0.6684, --()--()
+0.4199, epoch  6: 1.6761, 0.0456, 20.3869, 0.0001, 0.6644, --()--()
+0.4408, epoch  7: 1.5800, 0.0466, 20.4957, 0.0001, 0.6576, --()--()
+0.4589, epoch  8: 1.4996, 0.0476, 20.6113, 0.0001, 0.6505, --()--()
+0.4754, epoch  9: 1.4328, 0.0486, 20.7251, 0.0000, 0.6437, --()--()
+0.4905, epoch 10: 1.3768, 0.0496, 20.8329, 0.0000, 0.6377, --()--()
+0.5044, epoch 11: 1.3291, 0.0505, 20.9336, 0.0000, 0.6324, --()--()
+0.5171, epoch 12: 1.2879, 0.0513, 21.0268, 0.0000, 0.6277, --()--()
+0.5288, epoch 13: 1.2520, 0.0522, 21.1128, 0.0000, 0.6237, --()--()
+0.5396, epoch 14: 1.2202, 0.0529, 21.1924, 0.0000, 0.6201, --()--()
+0.5497, epoch 15: 1.1917, 0.0537, 21.2660, 0.0000, 0.6170, --()--()
+0.5591, epoch 16: 1.1661, 0.0544, 21.3342, 0.0000, 0.6141, --()--()
+0.5680, epoch 17: 1.1429, 0.0550, 21.3977, 0.0000, 0.6115, --()--()
+0.5763, epoch 18: 1.1216, 0.0557, 21.4570, 0.0000, 0.6091, --()--()
+0.5842, epoch 19: 1.1021, 0.0563, 21.5123, 0.0000, 0.6070, --()--()
+0.5916, epoch 20: 1.0842, 0.0569, 21.5643, 0.0000, 0.6049, --()--()
+0.5986, epoch 21: 1.0675, 0.0574, 21.6130, 0.0000, 0.6031, --()--()
+0.6053, epoch 22: 1.0520, 0.0580, 21.6590, 0.0000, 0.6013, --()--()
+0.6117, epoch 23: 1.0376, 0.0585, 21.7023, 0.0000, 0.5997, --()--()
+0.6178, epoch 24: 1.0241, 0.0590, 21.7433, 0.0000, 0.5982, --()--()
+0.6236, epoch 25: 1.0115, 0.0594, 21.7821, 0.0000, 0.5968, --()--()
+0.6291, epoch 26: 0.9996, 0.0599, 21.8190, 0.0000, 0.5955, --()--()
+0.6344, epoch 27: 0.9884, 0.0603, 21.8540, 0.0000, 0.5942, --()--()
+0.6394, epoch 28: 0.9778, 0.0607, 21.8873, 0.0000, 0.5930, --()--()
+0.6443, epoch 29: 0.9678, 0.0612, 21.9190, 0.0000, 0.5919, --()--()
+checkpoint=True
+extract_reps=True
+validation_reps=../data/nuswide/output/output2/validationImg-xx
+========================================================
+train iae16-2
+the program is on gpu
+=======================================================
+debug=False
+batchsize=100
+hidden_dimension=2
+visible_dimension=16
+base_learning_rate=0.005
+learning_rate_decay_half_epochs=10
+start_momentum=0.5
+end_momentum=0.9
+momentum_decay_epochs=5
+weight_cost=0.0001
+corruption_level=0
+output_directory=../data/nuswide/output/output2
+show_freq=0
+normalize=False
+train_size=60000
+train_data=../data/nuswide/output/output2/trainImg-xx
+extract_reps=False
+eval_freq=1
+query_size=100
+validation_data=../data/nuswide/output/output2/validationImg-xx.npy
+label=../data/nuswide/input/validationGnd.npy
+query=../data/nuswide/input/query100.npy
+max_epoch=30
+neigbor dist,epoch:rec err, L2  , weight(w), +w ratio, sparsity
+0.0090, epoch  0: 0.7511, 0.0044, 6.4467, 0.0001, 0.0728, --()--()
+0.0073, epoch  1: 0.6260, 0.0044, 6.4832, 0.0001, 0.0334, --()--()
+0.0067, epoch  2: 0.5873, 0.0044, 6.4953, 0.0000, 0.0258, --()--()
+0.0065, epoch  3: 0.5703, 0.0044, 6.4952, 0.0000, 0.0235, --()--()
+0.0068, epoch  4: 0.5615, 0.0044, 6.4845, 0.0000, 0.0234, --()--()
+0.0080, epoch  5: 0.5555, 0.0044, 6.4552, 0.0000, 0.0266, --()--()
+0.0098, epoch  6: 0.5517, 0.0044, 6.4219, 0.0000, 0.0321, --()--()
+0.0121, epoch  7: 0.5481, 0.0044, 6.3900, 0.0000, 0.0397, --()--()
+0.0147, epoch  8: 0.5444, 0.0044, 6.3625, 0.0000, 0.0487, --()--()
+0.0172, epoch  9: 0.5408, 0.0044, 6.3405, 0.0000, 0.0582, --()--()
+0.0195, epoch 10: 0.5373, 0.0044, 6.3233, 0.0000, 0.0672, --()--()
+0.0215, epoch 11: 0.5339, 0.0044, 6.3095, 0.0000, 0.0756, --()--()
+0.0232, epoch 12: 0.5304, 0.0043, 6.2977, 0.0000, 0.0835, --()--()
+0.0248, epoch 13: 0.5269, 0.0043, 6.2873, 0.0000, 0.0909, --()--()
+0.0262, epoch 14: 0.5234, 0.0043, 6.2779, 0.0000, 0.0980, --()--()
+0.0274, epoch 15: 0.5199, 0.0043, 6.2693, 0.0000, 0.1050, --()--()
+0.0285, epoch 16: 0.5164, 0.0043, 6.2615, 0.0000, 0.1118, --()--()
+0.0296, epoch 17: 0.5129, 0.0043, 6.2545, 0.0000, 0.1185, --()--()
+0.0305, epoch 18: 0.5094, 0.0043, 6.2481, 0.0000, 0.1250, --()--()
+0.0313, epoch 19: 0.5060, 0.0043, 6.2425, 0.0000, 0.1314, --()--()
+0.0320, epoch 20: 0.5026, 0.0043, 6.2377, 0.0000, 0.1377, --()--()
+0.0327, epoch 21: 0.4993, 0.0043, 6.2335, 0.0000, 0.1439, --()--()
+0.0333, epoch 22: 0.4960, 0.0043, 6.2299, 0.0000, 0.1498, --()--()
+0.0338, epoch 23: 0.4928, 0.0043, 6.2270, 0.0000, 0.1557, --()--()
+0.0343, epoch 24: 0.4898, 0.0043, 6.2247, 0.0000, 0.1613, --()--()
+0.0347, epoch 25: 0.4868, 0.0043, 6.2230, 0.0000, 0.1668, --()--()
+0.0351, epoch 26: 0.4839, 0.0043, 6.2217, 0.0000, 0.1721, --()--()
+0.0355, epoch 27: 0.4811, 0.0043, 6.2209, 0.0000, 0.1772, --()--()
+0.0358, epoch 28: 0.4785, 0.0043, 6.2204, 0.0000, 0.1822, --()--()
+0.0361, epoch 29: 0.4759, 0.0043, 6.2203, 0.0000, 0.1870, --()--()
+checkpoint=True
+extract_reps=False
+========================================================
+train isae2
+the program is on gpu
+=======================================================
+debug=False
+batchsize=100
+depth=4
+reset_hyperparam=isae2
+ae1=../data/nuswide/output/output2/iae500-128/model
+********reset hyper-parameters**************
+base_learning_rate=0.001
+learning_rate_decay_half_epochs=10
+start_momentum=0.5
+end_momentum=0.9
+momentum_decay_epochs=5
+weight_cost=0.0001
+corruption_level=0
+ae2=../data/nuswide/output/output2/iae128-16/model
+********reset hyper-parameters**************
+base_learning_rate=0.001
+learning_rate_decay_half_epochs=10
+start_momentum=0.5
+end_momentum=0.9
+momentum_decay_epochs=5
+weight_cost=0.0001
+corruption_level=0
+ae3=../data/nuswide/output/output2/iae16-2/model
+********reset hyper-parameters**************
+base_learning_rate=0.001
+learning_rate_decay_half_epochs=10
+start_momentum=0.5
+end_momentum=0.9
+momentum_decay_epochs=5
+weight_cost=0.0001
+corruption_level=0
+output_directory=../data/nuswide/output/output2
+show_freq=30
+normalize=False
+train_size=60000
+train_data=../data/nuswide/input/trainImg.npy
+extract_reps=False
+eval_freq=1
+query_size=100
+validation_data=../data/nuswide/input/validationImg.npy
+label=../data/nuswide/input/validationGnd.npy
+query=../data/nuswide/input/query100.npy
+max_epoch=30
+neighbor dist, epoch , rec err, sparsities
+0.0281, epoch  0: 501.7235, 0.0744, 0.5952, 0.1778, --()--()
+0.0429, epoch  1: 483.3219, 0.0821, 0.5930, 0.2675, --()--()
+0.0452, epoch  2: 464.3047, 0.0814, 0.6049, 0.3460, --()--()
+0.0416, epoch  3: 455.5141, 0.0839, 0.6381, 0.3562, --()--()
+0.0413, epoch  4: 448.7465, 0.0859, 0.6513, 0.3584, --()--()
+0.0404, epoch  5: 448.6469, 0.0822, 0.6249, 0.3300, --()--()
+0.0402, epoch  6: 442.9266, 0.0797, 0.6020, 0.3538, --()--()
+0.0415, epoch  7: 441.2101, 0.0787, 0.5672, 0.3571, --()--()
+0.0393, epoch  8: 438.3266, 0.0727, 0.5586, 0.3790, --()--()
+0.0396, epoch  9: 437.9031, 0.0732, 0.5409, 0.3922, --()--()
+0.0403, epoch 10: 444.6588, 0.0721, 0.5293, 0.4073, --()--()
+0.0408, epoch 11: 435.6431, 0.0722, 0.5130, 0.4107, --()--()
+0.0410, epoch 12: 434.3665, 0.0723, 0.5072, 0.4189, --()--()
+0.0402, epoch 13: 434.6503, 0.0732, 0.5044, 0.4148, --()--()
+0.0403, epoch 14: 434.9906, 0.0726, 0.4956, 0.4180, --()--()
+0.0393, epoch 15: 436.1180, 0.0683, 0.4959, 0.4268, --()--()
+0.0395, epoch 16: 433.4914, 0.0718, 0.4726, 0.4230, --()--()
+0.0395, epoch 17: 430.5142, 0.0712, 0.4852, 0.4220, --()--()
+0.0393, epoch 18: 427.9387, 0.0741, 0.4757, 0.4203, --()--()
+0.0386, epoch 19: 429.5042, 0.0725, 0.4788, 0.4224, --()--()
+0.0377, epoch 20: 426.7007, 0.0684, 0.4908, 0.4207, --()--()
+0.0387, epoch 21: 428.1946, 0.0726, 0.4785, 0.4241, --()--()
+0.0385, epoch 22: 425.5615, 0.0717, 0.4806, 0.4206, --()--()
+0.0378, epoch 23: 427.2360, 0.0717, 0.4775, 0.4275, --()--()
+0.0407, epoch 24: 430.0148, 0.0740, 0.4729, 0.4272, --()--()
+0.0389, epoch 25: 430.9123, 0.0686, 0.4858, 0.4363, --()--()
+0.0385, epoch 26: 426.4121, 0.0707, 0.4795, 0.4323, --()--()
+0.0384, epoch 27: 425.8487, 0.0717, 0.4770, 0.4318, --()--()
+0.0384, epoch 28: 428.5651, 0.0704, 0.4756, 0.4438, --()--()
+0.0388, epoch 29: 424.9848, 0.0691, 0.4790, 0.4431, --()--()
+checkpoint=True
+extract_reps=False
+========================================================
+train tae1k-128
+the program is on gpu
+=======================================================
+debug=False
+batchsize=100
+hidden_dimension=128
+visible_dimension=1000
+base_learning_rate=0.005
+learning_rate_decay_half_epochs=10
+start_momentum=0.5
+end_momentum=0.9
+momentum_decay_epochs=5
+weight_cost=0.0001
+corruption_level=0
+output_directory=../data/nuswide/output/output2
+show_freq=0
+normalize=False
+train_size=60000
+train_data=../data/nuswide/input/trainTxt.npy
+extract_reps=True
+train_reps=../data/nuswide/output/output2/trainTxt-x
+eval_freq=1
+query_size=100
+validation_data=../data/nuswide/input/validationTxt.npy
+label=../data/nuswide/input/validationGnd.npy
+query=../data/nuswide/input/query100.npy
+max_epoch=30
+neigbor dist,epoch:rec err, L2  , weight(w), +w ratio, sparsity
+1.0013, epoch  0: 34.6939, 0.3380, 58.1183, 0.0000, 0.3942, --()--()
+1.0067, epoch  1: 33.4072, 0.3377, 58.0543, 0.0001, 0.3985, --()--()
+1.0153, epoch  2: 32.8512, 0.3376, 58.0049, 0.0001, 0.4037, --()--()
+1.0280, epoch  3: 32.4106, 0.3378, 57.9908, 0.0001, 0.4094, --()--()
+1.0482, epoch  4: 31.8945, 0.3390, 58.0526, 0.0001, 0.4156, --()--()
+1.0850, epoch  5: 31.0892, 0.3431, 58.3426, 0.0001, 0.4197, --()--()
+1.1251, epoch  6: 30.2302, 0.3488, 58.7715, 0.0001, 0.4244, --()--()
+1.1658, epoch  7: 29.4496, 0.3556, 59.2900, 0.0001, 0.4299, --()--()
+1.2052, epoch  8: 28.7557, 0.3633, 59.8630, 0.0001, 0.4354, --()--()
+1.2419, epoch  9: 28.1460, 0.3713, 60.4617, 0.0001, 0.4406, --()--()
+1.2756, epoch 10: 27.6062, 0.3795, 61.0669, 0.0001, 0.4452, --()--()
+1.3062, epoch 11: 27.1242, 0.3877, 61.6669, 0.0001, 0.4492, --()--()
+1.3342, epoch 12: 26.6904, 0.3959, 62.2553, 0.0001, 0.4527, --()--()
+1.3598, epoch 13: 26.2968, 0.4040, 62.8292, 0.0001, 0.4557, --()--()
+1.3832, epoch 14: 25.9371, 0.4119, 63.3873, 0.0001, 0.4584, --()--()
+1.4049, epoch 15: 25.6059, 0.4197, 63.9294, 0.0001, 0.4608, --()--()
+1.4250, epoch 16: 25.2993, 0.4273, 64.4555, 0.0001, 0.4629, --()--()
+1.4436, epoch 17: 25.0140, 0.4348, 64.9660, 0.0001, 0.4648, --()--()
+1.4610, epoch 18: 24.7475, 0.4421, 65.4611, 0.0001, 0.4666, --()--()
+1.4772, epoch 19: 24.4977, 0.4493, 65.9413, 0.0000, 0.4682, --()--()
+1.4925, epoch 20: 24.2630, 0.4564, 66.4072, 0.0000, 0.4696, --()--()
+1.5068, epoch 21: 24.0420, 0.4633, 66.8590, 0.0000, 0.4709, --()--()
+1.5203, epoch 22: 23.8333, 0.4700, 67.2973, 0.0000, 0.4721, --()--()
+1.5330, epoch 23: 23.6360, 0.4766, 67.7225, 0.0000, 0.4731, --()--()
+1.5450, epoch 24: 23.4490, 0.4830, 68.1351, 0.0000, 0.4741, --()--()
+1.5564, epoch 25: 23.2716, 0.4894, 68.5356, 0.0000, 0.4750, --()--()
+1.5672, epoch 26: 23.1028, 0.4955, 68.9244, 0.0000, 0.4759, --()--()
+1.5775, epoch 27: 22.9422, 0.5016, 69.3020, 0.0000, 0.4766, --()--()
+1.5873, epoch 28: 22.7891, 0.5075, 69.6688, 0.0000, 0.4773, --()--()
+1.5967, epoch 29: 22.6429, 0.5132, 70.0252, 0.0000, 0.4780, --()--()
+checkpoint=True
+extract_reps=True
+validation_reps=../data/nuswide/output/output2/validationTxt-x
+========================================================
+train tae128-16
+the program is on gpu
+=======================================================
+debug=False
+batchsize=100
+hidden_dimension=16
+visible_dimension=128
+base_learning_rate=0.01
+learning_rate_decay_half_epochs=10
+start_momentum=0.5
+end_momentum=0.9
+momentum_decay_epochs=5
+weight_cost=0.0001
+corruption_level=0
+output_directory=../data/nuswide/output/output2
+show_freq=0
+normalize=False
+train_size=60000
+train_data=../data/nuswide/output/output2/trainTxt-x
+extract_reps=True
+train_reps=../data/nuswide/output/output2/trainTxt-xx
+Traceback (most recent call last):
+  File "main.py", line 83, in <module>
+    train(args.a[-1],args.a[i])
+  File "main.py", line 66, in train
+    model.train()
+  File "/home/jessie/code/msae/msae/model.py", line 249, in train
+    trainDataLoader=DataHandler(trainDataPath, trainRepsPath, self.vDim, self.hDim, self.batchsize,numBatch, normalize)
+  File "/home/jessie/code/msae/msae/datahandler.py", line 58, in __init__
+    gpuCache=GPUCache(memCache, batchsize, indim, gpuMem)
+  File "/home/jessie/code/msae/msae/datahandler.py", line 250, in __init__
+    self.data=gp.empty((self.maxrows, dim))
+  File "/home/jessie/code/msae/msae/gnumpy.py", line 359, in empty
+    return garray(_new_cm(_prodT(shape)), shape, None)
+  File "/home/jessie/code/msae/msae/gnumpy.py", line 235, in _new_cm
+    raise MemoryError('The GPU failed to allocate the requested %d bytes of memory. This doesn\'t mean that your program is using too much memory. It does, however, mean that you should reduce the value of gnumpy.max_memory_usage (currently %s), to always have some memory unused (which is necessary to find contiguous large blocks of memory to allocate). Failing to allocate enough memory makes the GPU feel very unwell, so you are advised to restart Python now, or expect to see incoherent error messages and risk causing more serious damage.' % (size*4, str(max_memory_usage)))
+MemoryError: The GPU failed to allocate the requested 536832000 bytes of memory. This doesn't mean that your program is using too much memory. It does, however, mean that you should reduce the value of gnumpy.max_memory_usage (currently inf), to always have some memory unused (which is necessary to find contiguous large blocks of memory to allocate). Failing to allocate enough memory makes the GPU feel very unwell, so you are advised to restart Python now, or expect to see incoherent error messages and risk causing more serious damage.
+========================================================
+train msae
+the program is on gpu
+=======================================================
+debug=False
+batchsize=100
+depth=4
+debug=False
+batchsize=100
+depth=4
+reset_hyperparam=msae
+iae1=../data/nuswide/output/output2/isae2/iae500-128
+********reset hyper-parameters**************
+base_learning_rate=0.05
+learning_rate_decay_half_epochs=10
+start_momentum=0.5
+end_momentum=0.9
+momentum_decay_epochs=5
+weight_cost=0.0001
+corruption_level=0
+iae2=../data/nuswide/output/output2/isae2/iae128-16
+********reset hyper-parameters**************
+base_learning_rate=0.05
+learning_rate_decay_half_epochs=10
+start_momentum=0.5
+end_momentum=0.9
+momentum_decay_epochs=5
+weight_cost=0.0001
+corruption_level=0
+iae3=../data/nuswide/output/output2/isae2/iae16-2
+********reset hyper-parameters**************
+base_learning_rate=0.05
+learning_rate_decay_half_epochs=10
+start_momentum=0.5
+end_momentum=0.9
+momentum_decay_epochs=5
+weight_cost=0.0001
+corruption_level=0
+debug=False
+batchsize=100
+depth=4
+reset_hyperparam=msae
+tae1=../data/nuswide/output/output2/tsae2/tae1k-128
+Traceback (most recent call last):
+  File "main.py", line 83, in <module>
+    train(args.a[-1],args.a[i])
+  File "main.py", line 64, in train
+    model=MSAE(config, name)
+  File "/home/jessie/code/msae/msae/msae.py", line 46, in __init__
+    self.tsae=self.createsae("tae", "tsae")
+  File "/home/jessie/code/msae/msae/msae.py", line 82, in createsae
+    return SAE(self.config, self.name, prefix=prefix)
+  File "/home/jessie/code/msae/msae/sae.py", line 41, in __init__
+    ae=self.loadModel(config, self.readField(config, name, prefix+str(i)))
+  File "/home/jessie/code/msae/msae/model.py", line 176, in loadModel
+    modelname=self.readField(config, name, "model")
+  File "/home/jessie/code/msae/msae/model.py", line 136, in readField
+    ret = config.get(section, option)
+  File "/usr/local/lib/python2.7/dist-packages/configparser.py", line 797, in get
+    d = self._unify_values(section, vars)
+  File "/usr/local/lib/python2.7/dist-packages/configparser.py", line 1177, in _unify_values
+    raise NoSectionError(section)
+configparser.NoSectionError: No section: u'../data/nuswide/output/output2/tsae2/tae1k-128'
+###########Training#################
+python main.py -a iae500-128 iae128-16 iae16-2 isae2 config/nuswide/config2.ini
+python main.py -a tae1k-128 tae128-16 tae16-2 tsae2 config/nuswide/config2.ini
+python main.py -a msae config/nuswide/config2.ini
+../data/nuswide/output/output2/isae2/vis/30vis.npy
+Traceback (most recent call last):
+  File "run_nuswide.py", line 123, in <module>
+    visualize(dataset, iaes, taes, dim, 10000)
+  File "run_nuswide.py", line 83, in visualize
+    shutil.copy(last_vis_file(tsae_vis_dir),os.path.join(msae_vis_dir,"0txt.npy"))
+  File "run_nuswide.py", line 65, in last_vis_file
+    print vis_files[-1]
+IndexError: list index out of range

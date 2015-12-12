@@ -1,0 +1,661 @@
+========================================================
+train iae500-128
+the program is on gpu
+=======================================================
+========================================================
+train iae128-32
+the program is on gpu
+=======================================================
+========================================================
+train isae32
+the program is on gpu
+=======================================================
+========================================================
+train tae1k-128
+the program is on gpu
+=======================================================
+========================================================
+train tae128-32
+the program is on gpu
+=======================================================
+Traceback (most recent call last):
+  File "main.py", line 83, in <module>
+    train(args.a[-1],args.a[i])
+  File "main.py", line 66, in train
+    model.train()
+  File "/home/jessie/code/msae/msae/model.py", line 249, in train
+    trainDataLoader=DataHandler(trainDataPath, trainRepsPath, self.vDim, self.hDim, self.batchsize,numBatch, normalize)
+  File "/home/jessie/code/msae/msae/datahandler.py", line 58, in __init__
+    gpuCache=GPUCache(memCache, batchsize, indim, gpuMem)
+  File "/home/jessie/code/msae/msae/datahandler.py", line 250, in __init__
+    self.data=gp.empty((self.maxrows, dim))
+  File "/home/jessie/code/msae/msae/gnumpy.py", line 359, in empty
+    return garray(_new_cm(_prodT(shape)), shape, None)
+  File "/home/jessie/code/msae/msae/gnumpy.py", line 235, in _new_cm
+    raise MemoryError('The GPU failed to allocate the requested %d bytes of memory. This doesn\'t mean that your program is using too much memory. It does, however, mean that you should reduce the value of gnumpy.max_memory_usage (currently %s), to always have some memory unused (which is necessary to find contiguous large blocks of memory to allocate). Failing to allocate enough memory makes the GPU feel very unwell, so you are advised to restart Python now, or expect to see incoherent error messages and risk causing more serious damage.' % (size*4, str(max_memory_usage)))
+MemoryError: The GPU failed to allocate the requested 536832000 bytes of memory. This doesn't mean that your program is using too much memory. It does, however, mean that you should reduce the value of gnumpy.max_memory_usage (currently inf), to always have some memory unused (which is necessary to find contiguous large blocks of memory to allocate). Failing to allocate enough memory makes the GPU feel very unwell, so you are advised to restart Python now, or expect to see incoherent error messages and risk causing more serious damage.
+========================================================
+train msae
+the program is on gpu
+=======================================================
+
+fix_img_path
+0.0417, 0.0688, 0.0786, 0.1011, 
+##Performance Results##
+qimgT      0.3950 
+qtxtT      0.4740 
+crossT-qimg 0.4257 
+crossT-qtxt 0.4040 
+========================================================
+train iae500-128
+the program is on gpu
+=======================================================
+========================================================
+train iae128-24
+the program is on gpu
+=======================================================
+========================================================
+train isae24
+the program is on gpu
+=======================================================
+========================================================
+train tae1k-128
+the program is on gpu
+=======================================================
+========================================================
+train tae128-24
+the program is on gpu
+=======================================================
+Traceback (most recent call last):
+  File "main.py", line 83, in <module>
+    train(args.a[-1],args.a[i])
+  File "main.py", line 66, in train
+    model.train()
+  File "/home/jessie/code/msae/msae/model.py", line 249, in train
+    trainDataLoader=DataHandler(trainDataPath, trainRepsPath, self.vDim, self.hDim, self.batchsize,numBatch, normalize)
+  File "/home/jessie/code/msae/msae/datahandler.py", line 58, in __init__
+    gpuCache=GPUCache(memCache, batchsize, indim, gpuMem)
+  File "/home/jessie/code/msae/msae/datahandler.py", line 250, in __init__
+    self.data=gp.empty((self.maxrows, dim))
+  File "/home/jessie/code/msae/msae/gnumpy.py", line 359, in empty
+    return garray(_new_cm(_prodT(shape)), shape, None)
+  File "/home/jessie/code/msae/msae/gnumpy.py", line 235, in _new_cm
+    raise MemoryError('The GPU failed to allocate the requested %d bytes of memory. This doesn\'t mean that your program is using too much memory. It does, however, mean that you should reduce the value of gnumpy.max_memory_usage (currently %s), to always have some memory unused (which is necessary to find contiguous large blocks of memory to allocate). Failing to allocate enough memory makes the GPU feel very unwell, so you are advised to restart Python now, or expect to see incoherent error messages and risk causing more serious damage.' % (size*4, str(max_memory_usage)))
+MemoryError: The GPU failed to allocate the requested 536832000 bytes of memory. This doesn't mean that your program is using too much memory. It does, however, mean that you should reduce the value of gnumpy.max_memory_usage (currently inf), to always have some memory unused (which is necessary to find contiguous large blocks of memory to allocate). Failing to allocate enough memory makes the GPU feel very unwell, so you are advised to restart Python now, or expect to see incoherent error messages and risk causing more serious damage.
+========================================================
+train msae
+the program is on gpu
+=======================================================
+Traceback (most recent call last):
+  File "main.py", line 83, in <module>
+    train(args.a[-1],args.a[i])
+  File "main.py", line 64, in train
+    model=MSAE(config, name)
+  File "/home/jessie/code/msae/msae/msae.py", line 46, in __init__
+    self.tsae=self.createsae("tae", "tsae")
+  File "/home/jessie/code/msae/msae/msae.py", line 82, in createsae
+    return SAE(self.config, self.name, prefix=prefix)
+  File "/home/jessie/code/msae/msae/sae.py", line 41, in __init__
+    ae=self.loadModel(config, self.readField(config, name, prefix+str(i)))
+  File "/home/jessie/code/msae/msae/model.py", line 176, in loadModel
+    modelname=self.readField(config, name, "model")
+  File "/home/jessie/code/msae/msae/model.py", line 136, in readField
+    ret = config.get(section, option)
+  File "/usr/local/lib/python2.7/dist-packages/configparser.py", line 797, in get
+    d = self._unify_values(section, vars)
+  File "/usr/local/lib/python2.7/dist-packages/configparser.py", line 1177, in _unify_values
+    raise NoSectionError(section)
+configparser.NoSectionError: No section: u'../data/nuswide/output/output24/tsae24/tae1k-128'
+Traceback (most recent call last):
+  File "main.py", line 90, in <module>
+    ae=Model.load(args.e[0])
+  File "/home/jessie/code/msae/msae/model.py", line 87, in load
+    file = open(path)
+IOError: [Errno 2] No such file or directory: '../data/nuswide/output/output24/msae/model'
+Traceback (most recent call last):
+  File "main.py", line 130, in <module>
+    img=np.load(args.s[2])
+  File "/usr/lib/python2.7/dist-packages/numpy/lib/npyio.py", line 370, in load
+    fid = open(file, "rb")
+IOError: [Errno 2] No such file or directory: '../data/nuswide/output/output24/img.npy'
+
+##Performance Results##
+qimgT      0.3950 
+qtxtT      0.4740 
+crossT-qimg 0.4257 
+crossT-qtxt 0.4040 
+========================================================
+train iae500-128
+the program is on gpu
+=======================================================
+========================================================
+train iae128-16
+the program is on gpu
+=======================================================
+========================================================
+train isae16
+the program is on gpu
+=======================================================
+========================================================
+train tae1k-128
+the program is on gpu
+=======================================================
+========================================================
+train tae128-16
+the program is on gpu
+=======================================================
+Traceback (most recent call last):
+  File "main.py", line 83, in <module>
+    train(args.a[-1],args.a[i])
+  File "main.py", line 66, in train
+    model.train()
+  File "/home/jessie/code/msae/msae/model.py", line 249, in train
+    trainDataLoader=DataHandler(trainDataPath, trainRepsPath, self.vDim, self.hDim, self.batchsize,numBatch, normalize)
+  File "/home/jessie/code/msae/msae/datahandler.py", line 58, in __init__
+    gpuCache=GPUCache(memCache, batchsize, indim, gpuMem)
+  File "/home/jessie/code/msae/msae/datahandler.py", line 250, in __init__
+    self.data=gp.empty((self.maxrows, dim))
+  File "/home/jessie/code/msae/msae/gnumpy.py", line 359, in empty
+    return garray(_new_cm(_prodT(shape)), shape, None)
+  File "/home/jessie/code/msae/msae/gnumpy.py", line 235, in _new_cm
+    raise MemoryError('The GPU failed to allocate the requested %d bytes of memory. This doesn\'t mean that your program is using too much memory. It does, however, mean that you should reduce the value of gnumpy.max_memory_usage (currently %s), to always have some memory unused (which is necessary to find contiguous large blocks of memory to allocate). Failing to allocate enough memory makes the GPU feel very unwell, so you are advised to restart Python now, or expect to see incoherent error messages and risk causing more serious damage.' % (size*4, str(max_memory_usage)))
+MemoryError: The GPU failed to allocate the requested 536832000 bytes of memory. This doesn't mean that your program is using too much memory. It does, however, mean that you should reduce the value of gnumpy.max_memory_usage (currently inf), to always have some memory unused (which is necessary to find contiguous large blocks of memory to allocate). Failing to allocate enough memory makes the GPU feel very unwell, so you are advised to restart Python now, or expect to see incoherent error messages and risk causing more serious damage.
+========================================================
+train msae
+the program is on gpu
+=======================================================
+Traceback (most recent call last):
+  File "main.py", line 83, in <module>
+    train(args.a[-1],args.a[i])
+  File "main.py", line 64, in train
+    model=MSAE(config, name)
+  File "/home/jessie/code/msae/msae/msae.py", line 46, in __init__
+    self.tsae=self.createsae("tae", "tsae")
+  File "/home/jessie/code/msae/msae/msae.py", line 82, in createsae
+    return SAE(self.config, self.name, prefix=prefix)
+  File "/home/jessie/code/msae/msae/sae.py", line 41, in __init__
+    ae=self.loadModel(config, self.readField(config, name, prefix+str(i)))
+  File "/home/jessie/code/msae/msae/model.py", line 176, in loadModel
+    modelname=self.readField(config, name, "model")
+  File "/home/jessie/code/msae/msae/model.py", line 136, in readField
+    ret = config.get(section, option)
+  File "/usr/local/lib/python2.7/dist-packages/configparser.py", line 797, in get
+    d = self._unify_values(section, vars)
+  File "/usr/local/lib/python2.7/dist-packages/configparser.py", line 1177, in _unify_values
+    raise NoSectionError(section)
+configparser.NoSectionError: No section: u'../data/nuswide/output/output16/tsae16/tae1k-128'
+Traceback (most recent call last):
+  File "main.py", line 90, in <module>
+    ae=Model.load(args.e[0])
+  File "/home/jessie/code/msae/msae/model.py", line 87, in load
+    file = open(path)
+IOError: [Errno 2] No such file or directory: '../data/nuswide/output/output16/msae/model'
+Traceback (most recent call last):
+  File "main.py", line 130, in <module>
+    img=np.load(args.s[2])
+  File "/usr/lib/python2.7/dist-packages/numpy/lib/npyio.py", line 370, in load
+    fid = open(file, "rb")
+IOError: [Errno 2] No such file or directory: '../data/nuswide/output/output16/img.npy'
+
+##Performance Results##
+qimgT      0.3950 
+qtxtT      0.4740 
+crossT-qimg 0.4257 
+crossT-qtxt 0.4040 
+========================================================
+train iae500-128
+the program is on gpu
+=======================================================
+debug=False
+batchsize=100
+hidden_dimension=128
+visible_dimension=500
+base_learning_rate=0.005
+learning_rate_decay_half_epochs=10
+start_momentum=0.5
+end_momentum=0.9
+momentum_decay_epochs=5
+weight_cost=0.0001
+corruption_level=0
+output_directory=../data/nuswide/output/output2
+show_freq=0
+normalize=False
+train_size=60000
+train_data=../data/nuswide/input/trainImg.npy
+extract_reps=True
+train_reps=../data/nuswide/output/output2/trainImg-x
+eval_freq=1
+query_size=100
+validation_data=../data/nuswide/input/validationImg.npy
+label=../data/nuswide/input/validationGnd.npy
+query=../data/nuswide/input/query100.npy
+max_epoch=30
+neigbor dist,epoch:rec err, L2  , weight(w), +w ratio, sparsity
+0.0632, epoch  0: 547.9176, 0.3077, 55.2487, 0.0005, 0.0040, --()--()
+0.1132, epoch  1: 497.2575, 0.3248, 55.2276, 0.0012, 0.0083, --()--()
+0.1694, epoch  2: 476.2038, 0.3403, 55.1735, 0.0017, 0.0108, --()--()
+0.2672, epoch  3: 459.2782, 0.3578, 55.4347, 0.0025, 0.0139, --()--()
+0.2786, epoch  4: 469.5783, 0.5241, 77.8077, 0.0076, 0.0141, --()--()
+0.5212, epoch  5: 440.1334, 0.5786, 81.6232, 0.0019, 0.0220, --()--()
+0.7387, epoch  6: 424.3787, 0.6496, 87.3071, 0.0020, 0.0271, --()--()
+0.8797, epoch  7: 417.3103, 0.6883, 88.3991, 0.0036, 0.0319, --()--()
+1.0417, epoch  8: 408.3904, 0.7461, 93.0982, 0.0018, 0.0361, --()--()
+1.0940, epoch  9: 397.5407, 0.7803, 94.2863, 0.0027, 0.0402, --()--()
+1.1550, epoch 10: 394.2237, 0.8161, 95.0896, 0.0025, 0.0442, --()--()
+1.1947, epoch 11: 389.6110, 0.8480, 96.0147, 0.0022, 0.0448, --()--()
+1.2040, epoch 12: 386.1808, 0.9022, 100.1109, 0.0015, 0.0459, --()--()
+1.2096, epoch 13: 384.5351, 0.9354, 101.8216, 0.0018, 0.0471, --()--()
+1.2383, epoch 14: 380.5538, 0.9653, 102.9245, 0.0014, 0.0478, --()--()
+1.3109, epoch 15: 380.4729, 0.9857, 103.0914, 0.0017, 0.0496, --()--()
+1.3161, epoch 16: 394.0768, 7.6838, 372.7151, 0.0193, 0.0610, --()--()
+1.2682, epoch 17: 374.2144, 9.7872, 431.5972, 0.0004, 0.0609, --()--()
+1.3332, epoch 18: 375.6630, 9.7894, 431.4219, 0.0004, 0.0605, --()--()
+1.3348, epoch 19: 371.6847, 9.7858, 431.0218, 0.0004, 0.0612, --()--()
+1.3540, epoch 20: 367.0943, 9.7837, 430.6243, 0.0003, 0.0634, --()--()
+1.4203, epoch 21: 373.0943, 9.9225, 433.4580, 0.0005, 0.0652, --()--()
+1.4451, epoch 22: 370.3098, 9.9161, 433.2087, 0.0004, 0.0667, --()--()
+1.4805, epoch 23: 368.1757, 9.9153, 432.8977, 0.0003, 0.0679, --()--()
+1.5023, epoch 24: 380.4133, 9.9569, 433.7159, 0.0004, 0.0667, --()--()
+1.4976, epoch 25: 370.3412, 9.9489, 433.3993, 0.0003, 0.0678, --()--()
+1.5024, epoch 26: 377.1262, 9.9540, 433.3698, 0.0005, 0.0708, --()--()
+1.4892, epoch 27: 364.5147, 9.9983, 434.1859, 0.0003, 0.0697, --()--()
+1.5284, epoch 28: 368.1862, 9.9960, 433.8930, 0.0003, 0.0721, --()--()
+1.5078, epoch 29: 366.1051, 9.9885, 433.5959, 0.0005, 0.0700, --()--()
+checkpoint=True
+extract_reps=True
+validation_reps=../data/nuswide/output/output2/validationImg-x
+========================================================
+train iae128-16
+the program is on gpu
+=======================================================
+debug=False
+batchsize=100
+hidden_dimension=16
+visible_dimension=128
+base_learning_rate=0.005
+learning_rate_decay_half_epochs=10
+start_momentum=0.5
+end_momentum=0.9
+momentum_decay_epochs=5
+weight_cost=0.0001
+corruption_level=0
+output_directory=../data/nuswide/output/output2
+show_freq=0
+normalize=False
+train_size=60000
+train_data=../data/nuswide/output/output2/trainImg-x
+extract_reps=True
+train_reps=../data/nuswide/output/output2/trainImg-xx
+eval_freq=1
+query_size=100
+validation_data=../data/nuswide/output/output2/validationImg-x.npy
+label=../data/nuswide/input/validationGnd.npy
+query=../data/nuswide/input/query100.npy
+max_epoch=30
+neigbor dist,epoch:rec err, L2  , weight(w), +w ratio, sparsity
+0.3699, epoch  0: 3.5392, 0.0430, 20.3981, 0.0001, 0.4252, --()--()
+0.3548, epoch  1: 2.1379, 0.0437, 20.3418, 0.0001, 0.5511, --()--()
+0.3386, epoch  2: 1.9285, 0.0441, 20.3246, 0.0000, 0.5927, --()--()
+0.3319, epoch  3: 1.8332, 0.0444, 20.3155, 0.0000, 0.6173, --()--()
+0.3328, epoch  4: 1.7569, 0.0448, 20.3171, 0.0000, 0.6356, --()--()
+0.3482, epoch  5: 1.6568, 0.0454, 20.3505, 0.0001, 0.6518, --()--()
+0.3707, epoch  6: 1.5687, 0.0461, 20.4155, 0.0001, 0.6588, --()--()
+0.3935, epoch  7: 1.4896, 0.0469, 20.5017, 0.0001, 0.6604, --()--()
+0.4136, epoch  8: 1.4205, 0.0477, 20.5989, 0.0001, 0.6594, --()--()
+0.4310, epoch  9: 1.3609, 0.0486, 20.6996, 0.0000, 0.6573, --()--()
+0.4466, epoch 10: 1.3093, 0.0494, 20.7992, 0.0000, 0.6546, --()--()
+0.4611, epoch 11: 1.2641, 0.0502, 20.8954, 0.0000, 0.6518, --()--()
+0.4747, epoch 12: 1.2241, 0.0509, 20.9874, 0.0000, 0.6490, --()--()
+0.4875, epoch 13: 1.1884, 0.0517, 21.0746, 0.0000, 0.6463, --()--()
+0.4994, epoch 14: 1.1563, 0.0524, 21.1572, 0.0000, 0.6438, --()--()
+0.5105, epoch 15: 1.1274, 0.0531, 21.2351, 0.0000, 0.6416, --()--()
+0.5208, epoch 16: 1.1012, 0.0537, 21.3085, 0.0000, 0.6396, --()--()
+0.5302, epoch 17: 1.0774, 0.0543, 21.3776, 0.0000, 0.6379, --()--()
+0.5389, epoch 18: 1.0556, 0.0549, 21.4426, 0.0000, 0.6364, --()--()
+0.5470, epoch 19: 1.0356, 0.0555, 21.5039, 0.0000, 0.6351, --()--()
+0.5545, epoch 20: 1.0172, 0.0561, 21.5617, 0.0000, 0.6340, --()--()
+0.5615, epoch 21: 1.0002, 0.0566, 21.6161, 0.0000, 0.6330, --()--()
+0.5680, epoch 22: 0.9844, 0.0571, 21.6676, 0.0000, 0.6322, --()--()
+0.5741, epoch 23: 0.9698, 0.0576, 21.7161, 0.0000, 0.6315, --()--()
+0.5798, epoch 24: 0.9561, 0.0580, 21.7621, 0.0000, 0.6308, --()--()
+0.5853, epoch 25: 0.9433, 0.0585, 21.8056, 0.0000, 0.6302, --()--()
+0.5904, epoch 26: 0.9313, 0.0589, 21.8469, 0.0000, 0.6297, --()--()
+0.5952, epoch 27: 0.9200, 0.0593, 21.8861, 0.0000, 0.6292, --()--()
+0.5998, epoch 28: 0.9093, 0.0597, 21.9233, 0.0000, 0.6287, --()--()
+0.6042, epoch 29: 0.8993, 0.0601, 21.9587, 0.0000, 0.6283, --()--()
+checkpoint=True
+extract_reps=True
+validation_reps=../data/nuswide/output/output2/validationImg-xx
+========================================================
+train iae16-2
+the program is on gpu
+=======================================================
+debug=False
+batchsize=100
+hidden_dimension=2
+visible_dimension=16
+base_learning_rate=0.005
+learning_rate_decay_half_epochs=10
+start_momentum=0.5
+end_momentum=0.9
+momentum_decay_epochs=5
+weight_cost=0.0001
+corruption_level=0
+output_directory=../data/nuswide/output/output2
+show_freq=0
+normalize=False
+train_size=60000
+train_data=../data/nuswide/output/output2/trainImg-xx
+extract_reps=False
+eval_freq=1
+query_size=100
+validation_data=../data/nuswide/output/output2/validationImg-xx.npy
+label=../data/nuswide/input/validationGnd.npy
+query=../data/nuswide/input/query100.npy
+max_epoch=30
+neigbor dist,epoch:rec err, L2  , weight(w), +w ratio, sparsity
+0.0077, epoch  0: 0.7725, 0.0038, 6.2628, 0.0000, 0.0309, --()--()
+0.0067, epoch  1: 0.6419, 0.0038, 6.2747, 0.0000, 0.0266, --()--()
+0.0060, epoch  2: 0.5829, 0.0038, 6.2809, 0.0000, 0.0238, --()--()
+0.0055, epoch  3: 0.5531, 0.0038, 6.2837, 0.0000, 0.0217, --()--()
+0.0051, epoch  4: 0.5360, 0.0038, 6.2836, 0.0000, 0.0199, --()--()
+0.0047, epoch  5: 0.5244, 0.0037, 6.2784, 0.0000, 0.0184, --()--()
+0.0045, epoch  6: 0.5195, 0.0037, 6.2703, 0.0000, 0.0178, --()--()
+0.0044, epoch  7: 0.5167, 0.0037, 6.2609, 0.0000, 0.0178, --()--()
+0.0044, epoch  8: 0.5150, 0.0037, 6.2507, 0.0000, 0.0181, --()--()
+0.0044, epoch  9: 0.5137, 0.0037, 6.2400, 0.0000, 0.0188, --()--()
+0.0045, epoch 10: 0.5127, 0.0037, 6.2292, 0.0000, 0.0196, --()--()
+0.0046, epoch 11: 0.5118, 0.0037, 6.2184, 0.0000, 0.0207, --()--()
+0.0047, epoch 12: 0.5110, 0.0037, 6.2075, 0.0000, 0.0220, --()--()
+0.0048, epoch 13: 0.5103, 0.0036, 6.1967, 0.0000, 0.0234, --()--()
+0.0050, epoch 14: 0.5096, 0.0036, 6.1860, 0.0000, 0.0250, --()--()
+0.0051, epoch 15: 0.5089, 0.0036, 6.1754, 0.0000, 0.0268, --()--()
+0.0052, epoch 16: 0.5082, 0.0036, 6.1651, 0.0000, 0.0287, --()--()
+0.0054, epoch 17: 0.5075, 0.0036, 6.1548, 0.0000, 0.0308, --()--()
+0.0055, epoch 18: 0.5068, 0.0036, 6.1448, 0.0000, 0.0331, --()--()
+0.0057, epoch 19: 0.5060, 0.0036, 6.1350, 0.0000, 0.0355, --()--()
+0.0058, epoch 20: 0.5052, 0.0036, 6.1254, 0.0000, 0.0380, --()--()
+0.0060, epoch 21: 0.5044, 0.0036, 6.1160, 0.0000, 0.0408, --()--()
+0.0062, epoch 22: 0.5035, 0.0036, 6.1069, 0.0000, 0.0436, --()--()
+0.0064, epoch 23: 0.5026, 0.0036, 6.0980, 0.0000, 0.0467, --()--()
+0.0065, epoch 24: 0.5016, 0.0036, 6.0894, 0.0000, 0.0498, --()--()
+0.0067, epoch 25: 0.5006, 0.0036, 6.0812, 0.0000, 0.0531, --()--()
+0.0069, epoch 26: 0.4996, 0.0036, 6.0733, 0.0000, 0.0566, --()--()
+0.0070, epoch 27: 0.4985, 0.0035, 6.0657, 0.0000, 0.0601, --()--()
+0.0071, epoch 28: 0.4974, 0.0035, 6.0586, 0.0000, 0.0637, --()--()
+0.0072, epoch 29: 0.4962, 0.0035, 6.0519, 0.0000, 0.0675, --()--()
+checkpoint=True
+extract_reps=False
+========================================================
+train isae2
+the program is on gpu
+=======================================================
+debug=False
+batchsize=100
+depth=4
+reset_hyperparam=isae2
+ae1=../data/nuswide/output/output2/iae500-128/model
+********reset hyper-parameters**************
+base_learning_rate=0.001
+learning_rate_decay_half_epochs=10
+start_momentum=0.5
+end_momentum=0.9
+momentum_decay_epochs=5
+weight_cost=0.0001
+corruption_level=0
+ae2=../data/nuswide/output/output2/iae128-16/model
+********reset hyper-parameters**************
+base_learning_rate=0.001
+learning_rate_decay_half_epochs=10
+start_momentum=0.5
+end_momentum=0.9
+momentum_decay_epochs=5
+weight_cost=0.0001
+corruption_level=0
+ae3=../data/nuswide/output/output2/iae16-2/model
+********reset hyper-parameters**************
+base_learning_rate=0.001
+learning_rate_decay_half_epochs=10
+start_momentum=0.5
+end_momentum=0.9
+momentum_decay_epochs=5
+weight_cost=0.0001
+corruption_level=0
+output_directory=../data/nuswide/output/output2
+show_freq=30
+normalize=False
+train_size=60000
+train_data=../data/nuswide/input/trainImg.npy
+extract_reps=False
+eval_freq=1
+query_size=100
+validation_data=../data/nuswide/input/validationImg.npy
+label=../data/nuswide/input/validationGnd.npy
+query=../data/nuswide/input/query100.npy
+max_epoch=30
+neighbor dist, epoch , rec err, sparsities
+0.0077, epoch  0: 560.4197, 0.0799, 0.5953, 0.2415, --()--()
+0.0124, epoch  1: 509.3137, 0.0875, 0.5583, 0.3593, --()--()
+0.0424, epoch  2: 483.2973, 0.0918, 0.5423, 0.4697, --()--()
+0.0338, epoch  3: 468.4397, 0.0910, 0.5657, 0.3931, --()--()
+0.0336, epoch  4: 463.3410, 0.0902, 0.5527, 0.3764, --()--()
+0.0324, epoch  5: 455.0663, 0.0889, 0.5286, 0.3667, --()--()
+0.0329, epoch  6: 447.0202, 0.0889, 0.5101, 0.3422, --()--()
+0.0350, epoch  7: 451.0554, 0.0852, 0.4962, 0.3314, --()--()
+0.0293, epoch  8: 444.3953, 0.0847, 0.4920, 0.3092, --()--()
+0.0320, epoch  9: 450.3120, 0.0822, 0.4976, 0.2890, --()--()
+0.0312, epoch 10: 449.9299, 0.0818, 0.4940, 0.2740, --()--()
+0.0315, epoch 11: 439.2829, 0.0838, 0.4812, 0.2897, --()--()
+0.0297, epoch 12: 437.5025, 0.0824, 0.4755, 0.2805, --()--()
+0.0285, epoch 13: 442.4784, 0.0843, 0.4664, 0.2802, --()--()
+0.0285, epoch 14: 435.7434, 0.0834, 0.4693, 0.2773, --()--()
+0.0312, epoch 15: 435.2553, 0.0851, 0.4683, 0.2797, --()--()
+0.0306, epoch 16: 435.4490, 0.0834, 0.4693, 0.2841, --()--()
+0.0257, epoch 17: 462.9584, 0.0816, 0.4832, 0.2622, --()--()
+0.0206, epoch 18: 483.4855, 0.0796, 0.5126, 0.1845, --()--()
+0.0314, epoch 19: 434.4520, 0.0880, 0.4832, 0.2688, --()--()
+0.0311, epoch 20: 440.1883, 0.0880, 0.4805, 0.2665, --()--()
+0.0311, epoch 21: 432.0366, 0.0883, 0.4815, 0.2764, --()--()
+0.0310, epoch 22: 430.0233, 0.0887, 0.4874, 0.2794, --()--()
+0.0319, epoch 23: 431.9874, 0.0885, 0.4876, 0.2794, --()--()
+0.0293, epoch 24: 434.9401, 0.0887, 0.4885, 0.2774, --()--()
+0.0326, epoch 25: 429.3544, 0.0875, 0.4880, 0.2872, --()--()
+0.0314, epoch 26: 428.6505, 0.0876, 0.4843, 0.2874, --()--()
+0.0315, epoch 27: 426.5259, 0.0851, 0.4904, 0.2889, --()--()
+0.0316, epoch 28: 427.1424, 0.0870, 0.4882, 0.2861, --()--()
+0.0312, epoch 29: 426.2266, 0.0862, 0.4867, 0.2846, --()--()
+checkpoint=True
+extract_reps=False
+========================================================
+train tae1k-128
+the program is on gpu
+=======================================================
+debug=False
+batchsize=100
+hidden_dimension=128
+visible_dimension=1000
+base_learning_rate=0.005
+learning_rate_decay_half_epochs=10
+start_momentum=0.5
+end_momentum=0.9
+momentum_decay_epochs=5
+weight_cost=0.0001
+corruption_level=0
+output_directory=../data/nuswide/output/output2
+show_freq=0
+normalize=False
+train_size=60000
+train_data=../data/nuswide/input/trainTxt.npy
+extract_reps=True
+train_reps=../data/nuswide/output/output2/trainTxt-x
+eval_freq=1
+query_size=100
+validation_data=../data/nuswide/input/validationTxt.npy
+label=../data/nuswide/input/validationGnd.npy
+query=../data/nuswide/input/query100.npy
+max_epoch=30
+neigbor dist,epoch:rec err, L2  , weight(w), +w ratio, sparsity
+1.0070, epoch  0: 34.7108, 0.3408, 58.4056, 0.0000, 0.3940, --()--()
+1.0124, epoch  1: 33.4703, 0.3404, 58.3398, 0.0001, 0.3983, --()--()
+1.0211, epoch  2: 32.8897, 0.3402, 58.2903, 0.0001, 0.4034, --()--()
+1.0341, epoch  3: 32.4226, 0.3405, 58.2769, 0.0001, 0.4091, --()--()
+1.0546, epoch  4: 31.8900, 0.3417, 58.3394, 0.0001, 0.4154, --()--()
+1.0915, epoch  5: 31.0812, 0.3457, 58.6270, 0.0001, 0.4198, --()--()
+1.1313, epoch  6: 30.2203, 0.3514, 59.0519, 0.0001, 0.4249, --()--()
+1.1711, epoch  7: 29.4435, 0.3583, 59.5648, 0.0001, 0.4307, --()--()
+1.2094, epoch  8: 28.7525, 0.3659, 60.1311, 0.0001, 0.4365, --()--()
+1.2450, epoch  9: 28.1449, 0.3739, 60.7233, 0.0001, 0.4418, --()--()
+1.2777, epoch 10: 27.6082, 0.3820, 61.3223, 0.0001, 0.4465, --()--()
+1.3076, epoch 11: 27.1294, 0.3902, 61.9165, 0.0001, 0.4506, --()--()
+1.3349, epoch 12: 26.6986, 0.3984, 62.4998, 0.0001, 0.4540, --()--()
+1.3600, epoch 13: 26.3078, 0.4064, 63.0693, 0.0001, 0.4570, --()--()
+1.3830, epoch 14: 25.9507, 0.4143, 63.6237, 0.0001, 0.4597, --()--()
+1.4043, epoch 15: 25.6221, 0.4221, 64.1625, 0.0001, 0.4620, --()--()
+1.4241, epoch 16: 25.3182, 0.4297, 64.6855, 0.0001, 0.4641, --()--()
+1.4424, epoch 17: 25.0359, 0.4372, 65.1929, 0.0001, 0.4660, --()--()
+1.4595, epoch 18: 24.7725, 0.4445, 65.6849, 0.0001, 0.4676, --()--()
+1.4754, epoch 19: 24.5261, 0.4517, 66.1619, 0.0000, 0.4692, --()--()
+1.4903, epoch 20: 24.2949, 0.4587, 66.6242, 0.0000, 0.4705, --()--()
+1.5044, epoch 21: 24.0774, 0.4656, 67.0723, 0.0000, 0.4718, --()--()
+1.5175, epoch 22: 23.8722, 0.4723, 67.5067, 0.0000, 0.4729, --()--()
+1.5299, epoch 23: 23.6784, 0.4788, 67.9280, 0.0000, 0.4740, --()--()
+1.5417, epoch 24: 23.4948, 0.4852, 68.3365, 0.0000, 0.4749, --()--()
+1.5528, epoch 25: 23.3206, 0.4915, 68.7328, 0.0000, 0.4758, --()--()
+1.5633, epoch 26: 23.1550, 0.4976, 69.1175, 0.0000, 0.4766, --()--()
+1.5733, epoch 27: 22.9974, 0.5036, 69.4910, 0.0000, 0.4774, --()--()
+1.5828, epoch 28: 22.8471, 0.5094, 69.8537, 0.0000, 0.4781, --()--()
+1.5918, epoch 29: 22.7037, 0.5151, 70.2062, 0.0000, 0.4787, --()--()
+checkpoint=True
+extract_reps=True
+validation_reps=../data/nuswide/output/output2/validationTxt-x
+========================================================
+train tae128-16
+the program is on gpu
+=======================================================
+debug=False
+batchsize=100
+hidden_dimension=16
+visible_dimension=128
+base_learning_rate=0.01
+learning_rate_decay_half_epochs=10
+start_momentum=0.5
+end_momentum=0.9
+momentum_decay_epochs=5
+weight_cost=0.0001
+corruption_level=0
+output_directory=../data/nuswide/output/output2
+show_freq=0
+normalize=False
+train_size=60000
+train_data=../data/nuswide/output/output2/trainTxt-x
+extract_reps=True
+train_reps=../data/nuswide/output/output2/trainTxt-xx
+Traceback (most recent call last):
+  File "main.py", line 83, in <module>
+    train(args.a[-1],args.a[i])
+  File "main.py", line 66, in train
+    model.train()
+  File "/home/jessie/code/msae/msae/model.py", line 249, in train
+    trainDataLoader=DataHandler(trainDataPath, trainRepsPath, self.vDim, self.hDim, self.batchsize,numBatch, normalize)
+  File "/home/jessie/code/msae/msae/datahandler.py", line 58, in __init__
+    gpuCache=GPUCache(memCache, batchsize, indim, gpuMem)
+  File "/home/jessie/code/msae/msae/datahandler.py", line 250, in __init__
+    self.data=gp.empty((self.maxrows, dim))
+  File "/home/jessie/code/msae/msae/gnumpy.py", line 359, in empty
+    return garray(_new_cm(_prodT(shape)), shape, None)
+  File "/home/jessie/code/msae/msae/gnumpy.py", line 235, in _new_cm
+    raise MemoryError('The GPU failed to allocate the requested %d bytes of memory. This doesn\'t mean that your program is using too much memory. It does, however, mean that you should reduce the value of gnumpy.max_memory_usage (currently %s), to always have some memory unused (which is necessary to find contiguous large blocks of memory to allocate). Failing to allocate enough memory makes the GPU feel very unwell, so you are advised to restart Python now, or expect to see incoherent error messages and risk causing more serious damage.' % (size*4, str(max_memory_usage)))
+MemoryError: The GPU failed to allocate the requested 536832000 bytes of memory. This doesn't mean that your program is using too much memory. It does, however, mean that you should reduce the value of gnumpy.max_memory_usage (currently inf), to always have some memory unused (which is necessary to find contiguous large blocks of memory to allocate). Failing to allocate enough memory makes the GPU feel very unwell, so you are advised to restart Python now, or expect to see incoherent error messages and risk causing more serious damage.
+========================================================
+train msae
+the program is on gpu
+=======================================================
+debug=False
+batchsize=100
+depth=4
+debug=False
+batchsize=100
+depth=4
+reset_hyperparam=msae
+iae1=../data/nuswide/output/output2/isae2/iae500-128
+********reset hyper-parameters**************
+base_learning_rate=0.05
+learning_rate_decay_half_epochs=10
+start_momentum=0.5
+end_momentum=0.9
+momentum_decay_epochs=5
+weight_cost=0.0001
+corruption_level=0
+iae2=../data/nuswide/output/output2/isae2/iae128-16
+********reset hyper-parameters**************
+base_learning_rate=0.05
+learning_rate_decay_half_epochs=10
+start_momentum=0.5
+end_momentum=0.9
+momentum_decay_epochs=5
+weight_cost=0.0001
+corruption_level=0
+iae3=../data/nuswide/output/output2/isae2/iae16-2
+********reset hyper-parameters**************
+base_learning_rate=0.05
+learning_rate_decay_half_epochs=10
+start_momentum=0.5
+end_momentum=0.9
+momentum_decay_epochs=5
+weight_cost=0.0001
+corruption_level=0
+debug=False
+batchsize=100
+depth=4
+reset_hyperparam=msae
+tae1=../data/nuswide/output/output2/tsae2/tae1k-128
+Traceback (most recent call last):
+  File "main.py", line 83, in <module>
+    train(args.a[-1],args.a[i])
+  File "main.py", line 64, in train
+    model=MSAE(config, name)
+  File "/home/jessie/code/msae/msae/msae.py", line 46, in __init__
+    self.tsae=self.createsae("tae", "tsae")
+  File "/home/jessie/code/msae/msae/msae.py", line 82, in createsae
+    return SAE(self.config, self.name, prefix=prefix)
+  File "/home/jessie/code/msae/msae/sae.py", line 41, in __init__
+    ae=self.loadModel(config, self.readField(config, name, prefix+str(i)))
+  File "/home/jessie/code/msae/msae/model.py", line 176, in loadModel
+    modelname=self.readField(config, name, "model")
+  File "/home/jessie/code/msae/msae/model.py", line 136, in readField
+    ret = config.get(section, option)
+  File "/usr/local/lib/python2.7/dist-packages/configparser.py", line 797, in get
+    d = self._unify_values(section, vars)
+  File "/usr/local/lib/python2.7/dist-packages/configparser.py", line 1177, in _unify_values
+    raise NoSectionError(section)
+configparser.NoSectionError: No section: u'../data/nuswide/output/output2/tsae2/tae1k-128'
+###########Training#################
+python main.py -a iae500-128 iae128-32 isae32 config/nuswide/config32.ini
+python main.py -a tae1k-128 tae128-32 tsae32 config/nuswide/config32.ini
+python main.py -a msae config/nuswide/config32.ini
+#############Test###############
+###########Training#################
+python main.py -a iae500-128 iae128-24 isae24 config/nuswide/config24.ini
+python main.py -a tae1k-128 tae128-24 tsae24 config/nuswide/config24.ini
+python main.py -a msae config/nuswide/config24.ini
+#############Test###############
+###########Training#################
+python main.py -a iae500-128 iae128-16 isae16 config/nuswide/config16.ini
+python main.py -a tae1k-128 tae128-16 tsae16 config/nuswide/config16.ini
+python main.py -a msae config/nuswide/config16.ini
+#############Test###############
+###########Training#################
+python main.py -a iae500-128 iae128-16 iae16-2 isae2 config/nuswide/config2.ini
+python main.py -a tae1k-128 tae128-16 tae16-2 tsae2 config/nuswide/config2.ini
+python main.py -a msae config/nuswide/config2.ini
+../data/nuswide/output/output2/isae2/vis/30vis.npy
+Traceback (most recent call last):
+  File "run_nuswide.py", line 123, in <module>
+    visualize(dataset, iaes, taes, dim, 10000)
+  File "run_nuswide.py", line 82, in visualize
+    shutil.copy(last_vis_file(isae_vis_dir),os.path.join(msae_vis_dir,"0img.npy"))
+  File "/usr/lib/python2.7/shutil.py", line 119, in copy
+    copyfile(src, dst)
+  File "/usr/lib/python2.7/shutil.py", line 83, in copyfile
+    with open(dst, 'wb') as fdst:
+IOError: [Errno 2] No such file or directory: '../data/nuswide/output/output2/msae/vis/0img.npy'
