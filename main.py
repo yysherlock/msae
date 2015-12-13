@@ -75,8 +75,10 @@ if __name__ == "__main__":
                         latent features are either from matlab file with Bx_te=image features and By_te=text features, or in separate .npy file; perf results are saved in ./tmp")
     args = parser.parse_args()
 
-    print args.a
-"""
+    # print args.a
+        # python main.py -a iae500-128 iae128-32 isae32 config/nuswide/config32.ini
+        # args.a:  ['iae500-128', 'iae128-32', 'isae32', 'config/nuswide/config32.ini']
+        
     #train autoencoders, either sae or msae
     if args.a:
         for i in range (len(args.a)-1):
@@ -137,4 +139,3 @@ if __name__ == "__main__":
             img=img.T
             txt=txt.T
         searcher.evalCrossModal(img,txt,'','T', metric=metric)
-"""
