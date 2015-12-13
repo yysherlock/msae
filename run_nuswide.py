@@ -21,8 +21,9 @@ def train(dataset, iaes, taes, dim):
     cmd1+=config
     print cmd1
     isae=subprocess.Popen(cmd1, shell=True)
-    isae.wait()
-
+    isae.wait() # wait for child process to terminate.
+                    # Returns return code the attribute.
+    
     cmd2="python main.py -a "
     for ae in taes:
         cmd2+=ae+" "
@@ -39,8 +40,8 @@ def test(dataset, dim, qsize, statfile=None):
     """ do multi-modal retrieval on test dataset; save MAP to result.txt """
     print '#############Test###############'
     input_dir=os.path.join("../data", dataset, "input")
-    output_dir=os.path.join("../data", dataset, "output", "output"+str(dim)) 
-    
+    output_dir=os.path.join("../data", dataset, "output", "output"+str(dim))
+
     inputImg=os.path.join(input_dir,"testImg.npy")
     inputTxt=os.path.join(input_dir, "testTxt.npy")
     modelfile=os.path.join(output_dir,"msae","model")
@@ -74,7 +75,7 @@ def visualize(dataset, iaes, taes, dim, validation_size=None):
     train(dataset, iaes, taes, dim)
 
     dim=str(dim)
-    output_dir=os.path.join("../data", dataset, "output", "output"+dim) 
+    output_dir=os.path.join("../data", dataset, "output", "output"+dim)
     isae_vis_dir=os.path.join(output_dir,"isae"+dim, "vis")
     tsae_vis_dir=os.path.join(output_dir,"tsae"+dim, "vis")
 

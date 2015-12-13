@@ -62,7 +62,7 @@ def train(configPath, name):
     elif model_name== "msae":
         from msae import MSAE
         model=MSAE(config, name)
- 
+
     model.train()
 
 
@@ -75,6 +75,8 @@ if __name__ == "__main__":
                         latent features are either from matlab file with Bx_te=image features and By_te=text features, or in separate .npy file; perf results are saved in ./tmp")
     args = parser.parse_args()
 
+    print args.a
+"""
     #train autoencoders, either sae or msae
     if args.a:
         for i in range (len(args.a)-1):
@@ -100,7 +102,7 @@ if __name__ == "__main__":
             outdir=args.e[-1]
             np.save(os.path.join(outdir,"img"),imgcode)
             np.save(os.path.join(outdir,"txt"),txtcode)
-   
+
     #print performance
     if args.p:
         print '\n##Performance Results##'
@@ -130,8 +132,9 @@ if __name__ == "__main__":
             img=np.load(args.s[2])
             txt=np.load(args.s[3])
         assert(img.shape==txt.shape)
-        #transpose if necessary 
+        #transpose if necessary
         if img.shape[0]<img.shape[1]:
             img=img.T
             txt=txt.T
         searcher.evalCrossModal(img,txt,'','T', metric=metric)
+"""
